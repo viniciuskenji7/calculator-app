@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/calculator.png">
+
+  <title>Kenji | Calculator</title>
+  <link rel="stylesheet" href="style/style.css">
+  <script src="https://kit.fontawesome.com/998c60ef77.js" crossorigin="anonymous" deferf></script>
+  <script src="script/script.js" defer></script>
+</head>
+
+<body>
+  <main>
+    <div class="calculadora-container">
+      <!--Header calculadora-->
+      <div class="header-calc">
+        <h1 class="title">calc</h1>
+        <div class="mudar-tema">
+          <label>THEME</label>
+          <input type="checkbox" class="checkbox" name="tema" id="tema">
+          <div class="botaoTema">
+            <label class="label" for="tema">
+              <i class="fas fa-moon"></i>
+              <i class="fas fa-sun"></i>
+              <div class="ball"></div>
+            </label>
+          </div>
+        </div>
+      </div>
+      <!--//-->
+      <div class="visorCalc">
+        <input type="text" name="visorCalc" id="visorCalcInput" placeholder="0" disabled>
+      </div>
+
+      <!--Calculadora-->
+      <div class="calculadora">
+        <div id="calc">
+          <!--Primeira fileira-->
+          <div class="primeira-fil">
+            <button id="num7" class="botao">7</button>
+            <button id="num8" class="botao">8</button>
+            <button id="num9" class="botao">9</button>
+            <button id="del" class="botao">DEL</button>
+          </div>
+          <!--//-->
+          <!--Segunda fileira-->
+          <div class="segunda-fil">
+            <button id="num4" class="botao">4</button>
+            <button id="num5" class="botao">5</button>
+            <button id="num6" class="botao">6</button>
+            <button id="adi" class="botao">+</button>
+          </div>
+          <!--//-->
+
+          <!--Terceira fileira-->
+          <div class="terceira-fil">
+            <button id="num1" class="botao">1</button>
+            <button id="num2" class="botao">2</button>
+            <button id="num3" class="botao">3</button>
+            <button id="sub" class="botao">-</button>
+          </div>
+          <!--//-->
+
+          <!--Quarta fileira-->
+          <div class="quarta-fil">
+            <button id="ponto" class="botao">.</button>
+            <button id="num0" class="botao">0</button>
+            <button id="divi" class="botao">/</button>
+            <button id="mult" class="botao">*</button>
+          </div>
+          <!--//-->
+          <div class="quinta-fil">
+            <button id="reset" class="botao">RESET</button>
+            <button type="submit" id="calcular" class="botao">=</button>
+          </div>
+          <!--//-->
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

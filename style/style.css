@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+}
+:root {
+    /* Tema 1 */
+    /*Cores de fundo*/
+    --background: hsl(222, 26%, 31%); 
+    --background-keypad: hsl(223, 31%, 20%);
+    --background-screen: hsl(224, 36%, 15%);
+    
+    /*Cores textos*/
+    --text-color-button: hsl(221, 14%, 31%);
+    --text-color: white;
+    --hover-button: hsl(0, 0%, 100%);
+    --red: hsl(6, 63%, 50%);
+    --shadow: hsl(28, 16%, 65%);
+    --color-button: hsl(30, 25%, 89%);
+    --color-especific: hsl(224, 21%, 49%);
+    --hover-especific: hsl(30, 6%, 82%);
+    --hover-equal: hsl(6, 70%, 34%);
+}
+
+.dark-mode:root {
+     /* Tema2 */
+     --background: hsl(268, 75%, 9%); 
+     --background-keypad: hsl(268, 71%, 12%);
+     --background-screen: hsl(268, 71%, 12%);
+     
+     /*Cores textos*/
+     --text-color-button: hsl(52, 100%, 62%);
+     --text-color: hsl(52, 100%, 62%);
+     --hover-button: hsl(285, 91%, 52%);
+     --red: hsl(176, 100%, 44%);
+     --hover-equal: hsl(177, 92%, 70%);
+     --shadow: hsl(285, 91%, 52%);
+     --color-button: hsl(281, 89%, 26%);
+     --color-especific: hsl(268, 47%, 21%);
+     --hover-especific: hsl(290, 70%, 36%);
+}
+
+
+body {
+    background-color: var(--background);
+    height: 80vh;
+    transition: background 0.3s linear;
+}
+
+/* Config botao dark-mode */
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.fa-moon{
+    color: hsl(52, 100%, 62%);
+}
+.fa-sun{
+    color: hsl(52, 100%, 62%);
+}
+
+.label {
+    background-color: #111;
+    border-radius: 50px;
+    cursor: pointer; 
+    margin-top: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    padding: 5px;
+    position: relative;
+    height: 20px;
+    width: 40px;
+
+    transform: scale(1.1);
+}
+
+.label .ball {
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+
+    height: 16px;
+    width: 17px;
+
+    transform: translateX(0px);
+    transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .botaoTema .label .ball {
+    transform: translateX(20px);
+}
+
+/* ////// */
+
+/*Configurações container calculadora*/
+.calculadora-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s linear;
+}
+
+.attribution {
+    text-align: center;
+    margin-top: 5px;
+    color: var(--text-color);
+    transition: background 0.3s linear;
+}
+
+.attribution a {
+    color: var(--text-color);
+    font-weight: 900;
+    text-decoration: none;
+}
+
+.title {
+    font-size: 1.5em;  
+}
+
+.header-calc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0 10px 0;
+    width: 100%;
+    gap: 12rem;
+    color: var(--text-color);
+    transition: background 0.2s linear;
+}
+
+label {
+    font-size: 13px;
+}
+
+.mudar-tema {
+    display: flex;
+    gap: 4px;
+    margin: 3px 3px 0;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 0.2s linear;
+}
+
+.visorCalc #visorCalcInput {
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--text-color);
+    width: 350px;
+    height: 100px;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: var(--background-screen);
+    text-align: end;
+    -moz-appearance: textfield;
+    appearance: textfield;
+    border: none;
+    transition: background 0.2s linear;
+}
+
+input[type=number]::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
+
+.calculadora {
+    background-color: var(--background-keypad);
+    width: 350px;
+    height: 350px;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 20px;
+    transition: background 0.2s linear;
+}
+
+#calc {
+    margin: 5px 5px 5px;
+    margin-top: 20px;
+    transition: background 0.2s linear;
+}
+
+.visorCalc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.2s linear;
+}
+
+
+
+.mudar-tema .botaoTema {
+    display: flex;
+    flex-direction: column;
+    /* margin-left: 20px; */
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 10px 20px;
+}
+
+
+/*Botoes*/
+
+.primeira-fil, .segunda-fil, .terceira-fil,
+.quarta-fil, .quinta-fil {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 5px 5px 5px;
+    align-items: center;
+    transition: background 0.2s linear;
+}
+
+.botao {
+    font-size: 20px;
+    font-weight: 700;
+    height: 50px;
+    width: 100%;
+    margin: 4px 5px auto;
+    border-radius: 6px;
+    margin-top: 7px;
+    background-color: var(--color-button);
+    color: var(--text-color-button);
+    border: none;
+    border-bottom: 3px solid var(--shadow);
+    cursor: pointer;
+    transition: background 0.2s linear;
+}
+
+.botao:hover {
+    background-color: var(--hover-button);
+}
+
+#del, #reset {
+    color: white;
+    background-color: var(--color-especific);
+    &:hover {
+        background-color: var(--hover-especific);
+    }
+}
+
+#reset, #calcular {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 5px;
+    width: 300px;
+    height: 50px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+
+#calcular {
+    color: white;
+    background-color: var(--red);
+    transition: background 0.2s linear;
+    &:hover{
+        background-color: var(--hover-equal);
+    }
+}
+
+
+@media (max-width: 375px) {
+    .calculadora-container {
+        height: 100vh;
+    }
+    .calculadora {
+        width: 310px;
+    }
+    .visorCalc #visorCalcInput {
+        width: 310px;
+    }
+    .botao {
+        width: 55px;
+    }
+    #reset, #calcular {
+        width: 127px;
+    }
+    .header-calc {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 20px 0 0 0;
+        gap: 10rem;
+    }
+   
+}
